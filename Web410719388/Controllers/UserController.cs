@@ -19,22 +19,8 @@ namespace Web410719388.Controllers
         [HttpPost]
         public ActionResult SignUp(SignUpData data)
         {
-            if (data.Name.IsNullOrWhiteSpace())
-            {
-                ViewBag.NameMessage = "請輸入姓名";
-            }
-            if (data.Account.IsNullOrWhiteSpace())
-            {
-                ViewBag.AccountMessage = "請輸入帳號";
-            }
-            if (data.Password.IsNullOrWhiteSpace())
-            {
-                ViewBag.PasswordMessage = "請輸入密碼";
-            }
-
-            if (!data.Name.IsNullOrWhiteSpace() &&
-               !data.Account.IsNullOrWhiteSpace() &&
-               !data.Password.IsNullOrWhiteSpace()) {
+            
+            if (ModelState.IsValid) {
                 ViewBag.Message = "註冊成功";
             }
 
